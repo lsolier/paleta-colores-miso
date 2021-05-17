@@ -1,0 +1,5 @@
+{
+    "projectId": "paleta-colores",
+    "defaultCommandTimeout": 10000,
+    "chromeWebSecurity": false
+}
