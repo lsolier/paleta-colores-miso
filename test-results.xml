@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="6.2720" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-05-18T07:53:28" tests="0" file="cypress/integration/palette-colors.spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Visual Regression Testing under Palette Color" timestamp="2021-05-18T07:53:29" tests="1" time="6.2720" failures="0">
+    <testcase name="Visual Regression Testing under Palette Color visits https://lsolier.github.io/color-palette/ and take screenshots" time="6.2720" classname="visits https://lsolier.github.io/color-palette/ and take screenshots">
+    </testcase>
+  </testsuite>
+</testsuites>

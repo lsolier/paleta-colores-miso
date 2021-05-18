@@ -39,3 +39,4 @@ npm install bootstrap
 ## install ejs - motor de platillas html
 ## install morgan - ver por consola las peticiones web realizadas desde el navegador al servidor (una forma de ver un log)
 ## Install nodemon -D (Se instalar como dependencia de desarrollo) - sirve para escuchar cambios en el codigo y actualizar el servidor
+## Install body parser - Se utilizar body parser para entender la informacion que envia front.

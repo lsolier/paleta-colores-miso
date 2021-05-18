@@ -1,5 +1,6 @@
 const express = require('express');
-const path = require('path')
+const path = require('path');
+const bodyParser = require('body-parser');
 
 //Get server from express
 const app = express();
@@ -13,9 +14,11 @@ app.set('view engine', 'ejs')
 app.use(require('./routes/index'));
 
 //middlewares
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 //static files
+app.use(express.static(path.join(__dirname, 'public')))
 
 //listening server
 app.listen(app.get('port'), () => {
