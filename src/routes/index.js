@@ -12,15 +12,11 @@ router.get('/contact', (req, res) => {
 });
 
 router.post('/generate-data', async (req, res) => {
-    let data = await CypressService.takeScreenshot();
-    console.log(data);
+    let dataSet = await CypressService.takeScreenshot();
+    console.log(dataSet);
     res.render('generate-data', { 
         title: 'First Visual Regression Testing', 
-        resultInfo : data.get('resultInfo'), 
-        datetime: data.get('datetime'), 
-        beforeImg: data.get('before-img'), 
-        afterImg: data.get('after-img'), 
-        compareImg: data.get('compare-img')
+        dataSet: dataSet
     });
 });
 

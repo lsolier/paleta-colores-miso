@@ -20,8 +20,8 @@ class CypressService {
         },
         env: {
           app_name: 'Palette Color',
-          scrennshot_before: `./${datetime}/before-chrome`,
-          screenshot_after: `./${datetime}/after-chrome`
+          scrennshot_before: `${datetime}/before-chrome`,
+          screenshot_after: `${datetime}/after-chrome`
         },
         headless: true,
         spec: ".//cypress/integration/palette-colors.spec.js"
@@ -48,7 +48,10 @@ class CypressService {
       data.set('before-img', beforeImageName);
       data.set('after-img', afterImageName);
       data.set('compare-img', compareImageName);
-      return data;
+
+      let dataSet = [];
+      dataSet.push(data);
+      return dataSet;
     }
 
 }

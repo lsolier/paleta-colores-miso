@@ -18,40 +18,42 @@
     
       <%- include ('partials/main-button-generate')%>
 
-      <div class="container px-4 py-5" id="custom-cards">
-        <h2 class="pb-2 border-bottom"> <%= datetime %> </h2>
-    
-        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
-              <img src="img/<%= beforeImg %>" alt="">
+      <% for(var i=0; i < dataSet.length; i++) { %>
+        <div class="container px-4 py-5" id="custom-cards">
+          <h2 class="pb-2 border-bottom"> <%= dataSet[i].get('datetime') %> </h2>
+      
+          <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+              <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                <img src="img/<%= dataSet[i].get('before-img') %>" alt="">
+              </div>
+            </div>
+      
+            <div class="col">
+              <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" >
+                <img src="img/<%= dataSet[i].get('after-img') %>" alt="">
+              </div>
+            </div>
+      
+            <div class="col">
+              <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                <img src="img/<%= dataSet[i].get('compare-img') %>" alt="">
+              </div>
             </div>
           </div>
     
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" >
-              <img src="img/<%= afterImg %>" alt="">
+          <div class="col d-flex align-items-start">
+            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
+            </div>
+            <div>
+              <h2>Analysis result</h2>
+              <p><%= JSON.stringify(dataSet[i].get('resultInfo')) %></p>
             </div>
           </div>
     
-          <div class="col">
-            <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg">
-              <img src="img/<%= compareImg %>" alt="">
-            </div>
-          </div>
         </div>
-  
-        <div class="col d-flex align-items-start">
-          <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
-            <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
-          </div>
-          <div>
-            <h2>Analysis result</h2>
-            <p><%= JSON.stringify(resultInfo) %></p>
-          </div>
-        </div>
-  
-      </div>
+      <% } %>
     </main>
 
     <footer class="bg-dark">
